@@ -5,6 +5,7 @@ for i in range (2, 8):
     if 8 % i == 0:
         print ('because of ', i, ' not prime')
 
+print ('NEXT')
 
 n = 19  # input
 prime = True
@@ -17,6 +18,8 @@ if prime:
 else:
     print ('not prime')
 
+print ('NEXT')
+
 
 def isprime(n):
     prime = True
@@ -25,10 +28,13 @@ def isprime(n):
             prime = False
     return prime
 
-if prime:
-    print ('prime')
-else:
-    print ('not prime')
+print(isprime(18))
 
+print ('NEXT')
 
-isprime(42)
+log_prime = 0
+for i in range (1, 1500):
+    if isprime (i) == True:
+        log_prime = log_prime + 1
+    
+print ('there is ', log_prime, ' prime number in selected range')
