@@ -11,5 +11,6 @@ for num in range(1,6):
 
 
 for i in ['dog','cat', '5']:
-    print ('hi')
     print (i, 2*i)
+
+print ('END')
