@@ -14,3 +14,6 @@ for i in ['dog','cat', '5']:
     print (i, 2*i)
 
 print ('END')
+
+for name in ['me', 'mother', 'dad', 'besty']:
+    print ('happy birthday', name)
