@@ -33,7 +33,31 @@ print(isprime(18))
 print ('NEXT')
 
 log_prime = 0
-for i in range (1, 1500):
+for i in range (1, 100001):
+    if isprime (i) == True:
+        log_prime = log_prime + 1
+    
+print ('there is ', log_prime, ' prime number in selected range')
+
+
+
+
+
+## control flow
+def isprime(n):
+    prime = True
+    for i in range (2, int(n**.5) + 1):
+        if n % i == 0:
+            prime = False
+            break
+    return prime
+
+print(isprime(18))
+
+print ('NEXT')
+
+log_prime = 0
+for i in range (1, 100001):
     if isprime (i) == True:
         log_prime = log_prime + 1
     
