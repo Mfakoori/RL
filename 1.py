@@ -1,9 +1,4 @@
-def add(x, y):
-    return(x + y)
 
-
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-print(num1, "+", num2, "=", add(num1, num2))
+x = float (input ('1st: '))
+y = float (input ('2nd: '))
+print (x + y)
