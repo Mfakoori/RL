@@ -57,8 +57,11 @@ print(isprime(18))
 print ('NEXT')
 
 log_prime = 0
-for i in range (1, 100001):
+last_prime = 0
+for i in range (1, 1000001):
     if isprime (i) == True:
         log_prime = log_prime + 1
+        last_prime = i
     
 print ('there is ', log_prime, ' prime number in selected range')
+print ('last prime is ', last_prime)
