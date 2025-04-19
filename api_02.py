@@ -1,5 +1,12 @@
 import requests as rq
-url = "https://jsonplaceholder.typicode.com/posts/1"
-response = rq.get(url)
-data = response.json()
-print (data)
+
+newpost = { 'title': 'My first API post!',
+    'body': 'Hello world from Python!',
+    'userId': 1
+
+}
+
+response = rq.post('https://jsonplaceholder.typicode.com/posts', json = newpost)
+
+print (response.status_code)
+print (response.json())
