@@ -13,19 +13,26 @@ sunset = sunset.strftime ('%I:%M:%S %p') # reformatting
 current_time = datetime.now()
 current_time = current_time.strftime('%I:%M:%S %p')
 
-
+from kavenegar import *
+mytext = 'hi there, you reached to sunset. current time: %s' % current_time
+my_api_key = KavenegarAPI('73304959614F66384365514B4858334B3473384E3939477833745968433365356B424B496569354E7144303D')
+url1 = 'https://api.kavenegar.com/v1/%s/sms/send.json' % my_api_key #this % my_api_key used to be replased with %s inside the string
+mypayload = { 'sender' : '2000660110','receptor':'09350540507', 'message':  mytext } # this %i recieves integer value from outside of the string
+my_api_key.sms_send (mypayload)
+            
+from kavenegar import *
 def mysms (time):
-    mytext = 'hi there, you reached to sunset. current time: %s' % time
-    my_api_key = '336F786D367A426543342F4A6B51706B3335764465775735733473594F72587A444F6E57635431304E70383D'
+    mytext = 'hi there, you reached to sunset. current time: %s' % current_time
+    my_api_key = KavenegarAPI('73304959614F66384365514B4858334B3473384E3939477833745968433365356B424B496569354E7144303D')
     url1 = 'https://api.kavenegar.com/v1/%s/sms/send.json' % my_api_key #this % my_api_key used to be replased with %s inside the string
-    mypayload = {'receptor':'09350540507', 'message':  mytext } # this %i recieves integer value from outside of the string
-    rq.post(url1, data= mypayload) # sends an sms to the phone
+    mypayload = { 'sender' : '2000660110','receptor':'09350540507', 'message':  mytext } # this %i recieves integer value from outside of the string
+    my_api_key.sms_send (mypayload) # sends an sms to the phone
 
 import time
 while current_time < sunset:
     current_time = datetime.now()
     current_time = current_time.strftime('%I:%M:%S %p') 
-    #time.sleep(300)
+    time.sleep(300)
     print ('    sunset: ', sunset, 'current_time: ', current_time)
 else:
     mysms(current_time)
